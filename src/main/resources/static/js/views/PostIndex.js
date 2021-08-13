@@ -35,7 +35,7 @@ export default function PostIndex(props) {
             console.log(title)
             console.log(content)
 
-            fetch("http://localhost:8080/posts", {
+            fetch("http://localhost:8080/api/posts", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
