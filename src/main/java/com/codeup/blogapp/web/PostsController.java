@@ -39,7 +39,7 @@ public class PostsController {
     }
 
 
-    @PutMapping("{/{id}}")
+    @PutMapping("{id}")
     private void updatePost(@RequestBody Post myPost, @PathVariable Long id) {
 
         System.out.println(myPost);
