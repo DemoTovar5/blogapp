@@ -7,7 +7,7 @@ import createView from "./createView.js";
  */
 
 export function RegisterEvent(){
-    $("register-btn").click(function(){
+    $("#register-btn").click(function(){
        let obj ={
            email:$("#email").val(),
            username:$("#username").val(),
