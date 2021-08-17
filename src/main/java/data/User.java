@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Collection;
+
 public class User {
 
 private Long id;
@@ -8,13 +10,20 @@ private String email;
 private String password;
 private Role role;
 public enum Role {USER, ADMIN};
+private Collection<Post> posts;
 
-    public User(Long id, String username, String email, String password, Role role) {
+    public User(Long id, String username, String email, String password, Role role, Collection<Post> posts) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.posts = posts;
+
+    }
+
+    public User(String username){
+        this.username = username;
     }
 
     public User() {
@@ -59,5 +68,13 @@ public enum Role {USER, ADMIN};
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Collection<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Collection<Post> posts) {
+        this.posts = posts;
     }
 }
