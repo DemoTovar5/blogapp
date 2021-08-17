@@ -15,20 +15,20 @@ public class PostsController {
     @GetMapping
     private List<Post> getPosts() {
 
-        User user = new User(1l,"testy","Testing ","mypassword", User.Role.USER, null);
+        User user = new User(1L,"testy","Testing ","mypassword", User.Role.USER, null);
 
 
         return new ArrayList<>() {{
-            add(new Post(1L, "My 1Post", "this is my first post",user));
-            add(new Post(2L, "My 2Post", "this is my second post",user));
-            add(new Post(3L, "My 3Post", "this is my third post",user));
+            add(new Post(1L, "My 1Post", "this is my first post", user));
+            add(new Post(2L, "My 2Post", "this is my second post", user));
+            add(new Post(3L, "My 3Post", "this is my third post", user));
         }};
     }
 
     @GetMapping("{id}")
     private Post getPostById(@PathVariable Long id) {
 
-        User user = new User(1l,"testy","Testing ","mypassword", User.Role.USER, null);
+        User user = new User(1L,"testy","Testing ","mypassword", User.Role.USER, null);
 
 
         if (id == 1) {

@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(value = "/api/users", headers = "Accept=application/json")
 public class UsersController {
 
-    User user = new User(1l,"testy","Testing ","mypassword", User.Role.USER, null);
+    User user = new User(1L,"testy","Testing","mypassword", User.Role.USER, null);
 
     List<Post> posts = new ArrayList<>(){{
 
