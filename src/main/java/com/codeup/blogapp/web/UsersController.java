@@ -88,11 +88,11 @@ private User findByEmail(@RequestParam String email){
 
 }
 
-@GetMapping("{id}/updatePassword")
+@PutMapping("{id}/updatePassword")
 private void updatePassword( @PathVariable Long id, @RequestParam(required = false) String oldPassword, @Valid @Size(min = 3) @RequestParam String newPassword){
 
-    System.out.println(oldPassword);
-    System.out.println(newPassword);
+    System.out.println("Old Password:" + oldPassword);
+    System.out.println("New Password:" + newPassword);
 
 }
 

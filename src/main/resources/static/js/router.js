@@ -5,8 +5,9 @@ import Error404 from "./views/Error404.js";
 import Loading from "./views/Loading.js";
 import Login from "./views/Login.js";
 import Register from "./views/Register.js";
-import LoginEvent, {RegisterEvent} from "./auth.js";
+import LoginEvent, {changePasswordEvent, RegisterEvent} from "./auth.js";
 import {PostsEvent}  from "./views/PostIndex.js"
+import User from "./views/user.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -67,7 +68,7 @@ export default function router(URI) {
             state:{},
             uri: '/user',
             title: "User",
-
+           viewEvent: changePasswordEvent
         }
     };
 

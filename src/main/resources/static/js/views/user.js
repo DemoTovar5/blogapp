@@ -9,14 +9,20 @@ export default function User(props) {
 <h1>User View</h1>
 
 <form id="user-form">
-    <label for="username">Username</label>
+
+    <label for="id">Search by Id</label>
+    <input id="user-id" name="id" type="text"/>
+    <label for="username">Enter Username</label>
     <input id="username" name="username" type="text"/>
-    <label for="email">Email</label>
-    <input id="email" name="email" type="text"/>
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password"/>
+    <br>
+    <label for="old-password"> Old Password</label>
+    <input id="old-password" name="old-password" type="password"/>
+    <br>
+    <label for="new-password"> New Password</label>
+    <input id="new-password" name="new-password" type="password"/>
     
-    <input id="user-btn" type="submit" value="Register"/>
+    
+    <input id="update-btn" type="submit" value="Update"/>
 </form>
 </body>
 </html>`;
