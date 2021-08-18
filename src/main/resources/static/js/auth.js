@@ -6,6 +6,11 @@ import createView from "./createView.js";
  * On a successful response, sets the tokens into storage and redirects to the root
  */
 
+
+
+
+
+
 export function RegisterEvent(){
     $("#register-btn").click(function(){
        let obj ={
