@@ -9,6 +9,19 @@ import createView from "./createView.js";
 // export function user
 //
 //
+
+export function searchCategories(){
+    $("#search-by-cat").click(function () {
+        let categoryname =
+
+
+    }
+
+
+
+}
+
+
 export function changePasswordEvent() {
     $("#update-btn").click(function () {
 

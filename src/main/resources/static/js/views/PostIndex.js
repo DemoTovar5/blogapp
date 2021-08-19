@@ -20,6 +20,10 @@ export default function PostIndex(props) {
         </div>
         <button id="create-btn">Submit</button>
     </form>
+    <form>
+     <input id="post-by-cat" type="text">
+     <button id="search-by-cat">Search by Category</button>
+     </form>
     <div class="post-container">
         ${props.posts.map(post =>
         `<h3 class="post-title" data-id="${post.id}">${post.title}</h3>
