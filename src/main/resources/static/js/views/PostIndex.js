@@ -20,10 +20,12 @@ export default function PostIndex(props) {
         </div>
         <button id="create-btn">Submit</button>
     </form>
+    
     <form>
      <input id="post-by-cat" type="text">
      <button id="search-by-cat">Search by Category</button>
      </form>
+     
     <div class="post-container">
         ${props.posts.map(post =>
         `<h3 class="post-title" data-id="${post.id}">${post.title}</h3>
@@ -47,6 +49,7 @@ export function PostsEvent(){
     CreateEvent()
     editEvent()
     deleteEvent()
+    searchCategories()
 }
 
 function CreateEvent() {
@@ -131,8 +134,33 @@ function CreateEvent() {
                         createView("/posts")
                     })
             })
+
+
         }
 
+export function searchCategories(){
+    $("#search-by-cat").click(function () {
+
+           let categoryName = $("#post-by-cat").val()
+
+
+        let request = {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                "Content-Type": "application/json"
+            },
+        };
+
+        fetch(`http://localhost:8080/api/categories?categoryName=${categoryName}`, request)
+            .then((response) => {
+                console.log(response.status)
+                createView("/posts");
+            });
+
+    })
+
+}
 
 
 
