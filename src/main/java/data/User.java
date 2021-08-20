@@ -1,30 +1,37 @@
 package data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.Collection;
 
 @Entity
-@Table(name="user")
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+    private Long id;
 
-    @Column(nullable = false, length=60)
-private String username;
+    @Column(nullable = false)
+    private String username;
 
-    @Column(nullable = false, length=60)
-private String email;
+    @Email
+    @Column(nullable = false)
+    private String email;
 
-    @Column(nullable = false, length=60)
-private String password;
+    @Column(nullable = false)
+    private String password;
 
-private Role role;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
 
-public enum Role {USER, ADMIN};
+    public enum Role {USER, ADMIN}
 
-private Collection<Post> posts;
+    ;
+
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "posts")
+    private Collection<Post> posts;
 
     public User(Long id, String username, String email, String password, Role role, Collection<Post> posts) {
         this.id = id;
@@ -36,7 +43,7 @@ private Collection<Post> posts;
 
     }
 
-    public User(String username){
+    public User(String username) {
         this.username = username;
     }
 

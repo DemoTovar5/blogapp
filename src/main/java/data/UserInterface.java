@@ -1,4 +1,7 @@
 package data;
 
-public interface UserInterface {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserInterface extends JpaRepository<Post, Long> {
+
 }

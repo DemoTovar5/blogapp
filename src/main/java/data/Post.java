@@ -7,21 +7,28 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name="posts")
+@Table(name = "posts")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length=120)
+    @Column(nullable = false, length = 120)
     private String title;
 
     @Column(nullable = false)
     private String content;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+        name="post_category",
+            joinColumns = {@JoinColumn(name="post_id")},
+            inverseJoinColumns = {@JoinColumn(name="category_id")}
+    )
     private Collection<Category> categories;
 
     public Post(Long id, String title, String content, User user) {
@@ -32,7 +39,7 @@ public class Post {
 
     }
 
-    public Post(String title, String content){
+    public Post(String title, String content) {
         this.title = title;
         this.content = content;
     }
