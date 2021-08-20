@@ -1,15 +1,29 @@
 package data;
 
+import javax.persistence.*;
 import java.util.Collection;
 
+@Entity
+@Table(name="user")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id;
+
+    @Column(nullable = false, length=60)
 private String username;
+
+    @Column(nullable = false, length=60)
 private String email;
+
+    @Column(nullable = false, length=60)
 private String password;
+
 private Role role;
+
 public enum Role {USER, ADMIN};
+
 private Collection<Post> posts;
 
     public User(Long id, String username, String email, String password, Role role, Collection<Post> posts) {
