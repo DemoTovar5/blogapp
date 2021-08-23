@@ -1,31 +1,36 @@
 package com.codeup.blogapp.web;
 
 
-import data.Category;
-import data.Post;
-import data.PostsRepository;
+import com.codeup.blogapp.data.Category;
+import com.codeup.blogapp.data.CategoryRepository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 
 @RestController
 @RequestMapping(value="/api/categories", headers="Accept=application/json")
 public class CategoriesController {
 
-    private final PostsRepository postsRepository;
+    private final CategoryRepository CategoryRepository;
 
-    public PostsController(PostsRepository postsRepository){
-        this.postsRepository = postsRepository;
+    public CategoriesController(CategoryRepository categoryRepository){
+        this.CategoryRepository = categoryRepository;
 
     }
 
 
-    @GetMapping
-    private Category getPostsByCategory(@RequestParam String categoryName) {
+//    @GetMapping
+//    private Category getPostsByCategory(@RequestParam String categoryName) {
+//
+//        return null;
+//
+//    }
 
-        return null;
+    @GetMapping
+    private List<Category> getCategories() {
+
+        return CategoryRepository.findAll();
 
     }
 }

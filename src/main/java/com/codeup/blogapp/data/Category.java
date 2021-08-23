@@ -1,6 +1,8 @@
-package data;
+package com.codeup.blogapp.data;
 
-import org.springframework.stereotype.Controller;
+
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -11,12 +13,13 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
 
     @ManyToMany(mappedBy = "categories")
+    @JsonManagedReference
     private Collection<Post> posts;
 
 

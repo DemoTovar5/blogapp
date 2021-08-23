@@ -1,11 +1,9 @@
 package com.codeup.blogapp.web;
 
-import data.Post;
-import data.PostsRepository;
-import data.User;
+import com.codeup.blogapp.data.Post;
+import com.codeup.blogapp.data.PostsRepository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,7 +27,7 @@ public class PostsController {
     @GetMapping("{id}")
     private Post getPostById(@PathVariable Long id) {
 
-        return postsRepository.getById(id);
+        return postsRepository.findById(id).get();
 
     }
 
@@ -39,7 +37,7 @@ public class PostsController {
         System.out.println(myPost.getTitle());
         System.out.println(myPost.getContent());
 
-        postsRepository.save(newPost);
+        postsRepository.save(myPost);
 
     }
 
@@ -49,7 +47,7 @@ public class PostsController {
 
         System.out.println(myPost);
 //        Post existingPost = postsRepository.getById(id);
-        postsRepository.save(postToUpdate);
+        postsRepository.save(myPost);
 
     }
 

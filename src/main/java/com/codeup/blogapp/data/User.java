@@ -1,4 +1,8 @@
-package data;
+package com.codeup.blogapp.data;
+
+
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -30,7 +34,8 @@ public class User {
 
     ;
 
-     @OneToMany(cascade = CascadeType.ALL, mappedBy = "posts")
+     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "id")
+     @JsonBackReference
     private Collection<Post> posts;
 
     public User(Long id, String username, String email, String password, Role role, Collection<Post> posts) {
