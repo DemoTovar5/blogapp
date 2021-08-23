@@ -19,7 +19,6 @@ public class Category {
     private String name;
 
     @ManyToMany(mappedBy = "categories")
-    @JsonManagedReference
     private Collection<Post> posts;
 
 
