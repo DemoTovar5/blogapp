@@ -3,6 +3,7 @@ package com.codeup.blogapp.web;
 import com.codeup.blogapp.data.Post;
 import com.codeup.blogapp.data.PostsRepository;
 import org.springframework.web.bind.annotation.*;
+import services.EmailService;
 
 import java.util.List;
 
@@ -12,11 +13,15 @@ import java.util.List;
 public class PostsController {
 
     private final PostsRepository postsRepository;
+    private final EmailService emailService;
 
-    public PostsController(PostsRepository postsRepository){
+    public PostsController(PostsRepository postsRepository, EmailService emailService){
         this.postsRepository = postsRepository;
-
+        this.emailService = emailService;
     }
+
+
+
 
     @GetMapping
     private List<Post> getPosts() {
@@ -57,6 +62,8 @@ public class PostsController {
     postsRepository.deleteById(id);
 
     }
+
+
 
 
 
