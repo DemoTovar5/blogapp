@@ -63,7 +63,7 @@ public class UsersController {
     @GetMapping("{id}")
     private User findById(@PathVariable Long id) {
 
-        return userRepository.getById(id);
+        return userRepository.findById(id).get();
     }
 
     @GetMapping("/findByUsername")
