@@ -36,7 +36,7 @@ public class User {
 
     ;
 
-     @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "user")
+     @OneToMany(mappedBy = "user")
      @JsonIgnoreProperties("user")
     private Collection<Post> posts;
 
