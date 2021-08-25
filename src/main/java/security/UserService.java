@@ -11,18 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
-public class UserService {
-
-
-    import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
-
-import java.util.Arrays;
-
     @Service
     public class UserService implements UserDetailsService {
 
@@ -39,4 +27,4 @@ import java.util.Arrays;
             return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), Arrays.asList(authority));
         }
     }
-}
+

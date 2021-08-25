@@ -1,16 +1,7 @@
 package security;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
-
-public class ResourceServerConfiguration {
-
-    import com.example.restblog.errors.CustomAccessDeniedHandler;
-import com.example.restblog.errors.CustomAuthenticationEntryPoint;
+import com.codeup.blogapp.errors.CustomAccessDeniedHandler;
+import com.codeup.blogapp.errors.CustomAuthenticationEntryPoint;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -53,4 +44,4 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
         }
 
     }
-}
+

@@ -12,8 +12,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-public class ServerSecurityConfig {
-
     @Configuration
     @EnableWebSecurity
     @EnableGlobalMethodSecurity(prePostEnabled = true, proxyTargetClass = true)
@@ -48,4 +46,4 @@ public class ServerSecurityConfig {
 
     }
 
-}
+
